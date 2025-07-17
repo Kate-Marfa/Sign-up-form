@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import homeownerIcon from "./home-work.svg";
-import professionalIcon from "./business-center.svg";
+import homeownerIconDefault from "./home-work-default.svg";
+import homeownerIconBlue from "./home-work-blue.svg";
+import professionalIconDefault from "./business-center-default.svg";
+import professionalIconBlue from "./business-center-blue.svg";
 import arrowIcon from "./keyboard-arrow-right.png";
 
 function RoleSelector() {
@@ -11,37 +13,79 @@ function RoleSelector() {
       id: "homeowner",
       title: "Homeowner",
       description: "I am a homeowner or interesed in home design.",
-      icon: homeownerIcon,
+      icon: {
+        default: homeownerIconDefault,
+        selected: homeownerIconBlue,
+      },
     },
     {
       id: "professional",
       title: "Professional",
       description: "I offer home improvement services or sell home products.",
-      icon: professionalIcon,
+      icon: {
+        default: professionalIconDefault,
+        selected: professionalIconBlue,
+      },
     },
   ];
 
   return (
     <div className="role-selector">
       <h2>Which describes you best?</h2>
+      <div className="role-list">
+        {roles.map((role) => {
+          const isSelected = selectorRole === role.id;
+          const iconSrc = isSelected ? role.icon.selected : role.icon.default;
+
+          return (
+            <div
+              key={role.id}
+              className={`role-card ${isSelected ? "selected" : ""}`}
+              onClick={() => setSelectorRole(role.id)}
+            >
+              <img src={iconSrc} alt="" />
+              <div>
+                <strong>{role.title}</strong>
+                <p>{role.description}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="button-container">
+        <button className="next-button" disabled={!selectorRole}>
+          Next
+          <img src={arrowIcon} alt="" className="arrow" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default RoleSelector;
+
+{
+  /* return (
+  <div className="role-selector">
+    <h2>Which describes you best?</h2>
+    <div className="role-list">
       {roles.map((role) => (
         <div
           key={role.id}
-          className={`role-card ${selectorRole === role.id ? "selected" : ""}`}
+          className={`role-card ${isSelected ? "selected" : ""}`}
         >
-          <img src={role.icon} alt="" className="role-icon" />
+          <img src={iconHomeowner} alt="" />
           <div>
             <strong>{role.title}</strong>
             <p>{role.description}</p>
           </div>
         </div>
       ))}
-      <button className="next-button" disabled={!selectorRole}>
-        Next
-        <img src={arrowIcon} alt="" className="arrow" />
-      </button>
     </div>
-  );
+    <button className="next-button" disabled={!selectorRole}>
+      Next
+      <img src={arrowIcon} alt="" className="arrow" />
+    </button>
+  </div>
+); */
 }
-
-export default RoleSelector;
