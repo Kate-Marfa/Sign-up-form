@@ -64,28 +64,3 @@ function RoleSelector() {
 
 export default RoleSelector;
 
-{
-  /* return (
-  <div className="role-selector">
-    <h2>Which describes you best?</h2>
-    <div className="role-list">
-      {roles.map((role) => (
-        <div
-          key={role.id}
-          className={`role-card ${isSelected ? "selected" : ""}`}
-        >
-          <img src={iconHomeowner} alt="" />
-          <div>
-            <strong>{role.title}</strong>
-            <p>{role.description}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-    <button className="next-button" disabled={!selectorRole}>
-      Next
-      <img src={arrowIcon} alt="" className="arrow" />
-    </button>
-  </div>
-); */
-}

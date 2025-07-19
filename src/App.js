@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import RoleSelector from './RoleSelector.js'
+import MultiStepForm from "./MultiStepForm.js";
 
 const App = () => {
-    return (
-      <div className='app'>
-        <RoleSelector />
-      </div>
-    );
-}
+  return (
+    <div className="app">
+      <MultiStepForm />
+    </div>
+  );
+};
 
 export default App;
-
