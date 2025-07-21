@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import RoleSelector from "./RoleSelector.js";
 import BasicInfo1 from "./Basic-info-1.js";
+import BasicInfo2 from "./Basic-info-2.js";
 
 function MultiStepForm() {
   const [step, setStep] = useState(1);
@@ -14,7 +15,8 @@ function MultiStepForm() {
     <div className="form-container">
       {/* {step === 1 && <RoleSelector />} */}
       {/* {step === 2 && <BasicInfo1 />} */}
-      <BasicInfo1 />
+      {/* {step === 3 && <BasicInfo2 />} */}
+      <BasicInfo2 />
     </div>
   );
 }

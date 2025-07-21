@@ -187,3 +187,62 @@ width: 100%;
   border-radius: 4px;
   border: none;
 }
+.h3-basicInfo2 {
+  font-family: Roboto;
+  font-size: 18px;
+  margin: 0;
+}
+
+.BasicInfo2{
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: 388px;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 12px;
+}
+
+input[type="checkbox" i] {
+  height: 18px;
+  width: 18px;
+  border-color: #7E7E7E;
+}
+
+.email-password-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+#email, #password {
+width: 362px;
+height: 40px;
+border: 1px solid #E0E0E0;
+border-radius: 4px;
+padding: 0 12px;
+}
+
+.password-instruction {
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #0000008A;
+}
+
+.buttons-previous-submit {
+  display: flex;
+  justify-content: space-between;
+}
+

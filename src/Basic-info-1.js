@@ -13,28 +13,38 @@ function BasicInfo1() {
         <h2>Basic information about you</h2>
         <div className="info-list">
           <span className="name-container">
-            <input type="text" id="firstName" placeholder="First name"></input>
-            <input type="text" id="lastName" placeholder="Last name"></input>
+            <input
+              type="text"
+              name={firstName}
+              id="firstName"
+              placeholder="First name"
+            ></input>
+            <input
+              type="text"
+              id="lastName"
+              name={lastName}
+              placeholder="Last name"
+            ></input>
           </span>
 
           <h3 className="gender-h3">Gender</h3>
           <span className="gender-list">
             <label className="gender-items">
-              <input type="radio" name="gender" value="male" />
+              <input type="radio" name={gender} value="male" />
               Male
             </label>
             <label className="gender-items">
-              <input type="radio" name="gender" value="female" />
+              <input type="radio" name={gender} value="female" />
               Female
             </label>
             <label className="gender-items">
-              <input type="radio" name="gender" value="no-answer" />I prefer not
+              <input type="radio" name={gender} value="no-answer" />I prefer not
               to say
             </label>
             <label className="gender-items">
-              <input type="radio" name="gender" value="other" />
+              <input type="radio" name={gender} value="other" />
               Other
-              <input type="text" id="other-gender-container" />
+              <input type="text" name={gender} id="other-gender-container" />
             </label>
           </span>
         </div>
@@ -48,6 +58,7 @@ function BasicInfo1() {
           </select>
           <input
             type="tel"
+            name={phoneNumber}
             className="phoneNumber-container"
             placeholder="Business phone number"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
