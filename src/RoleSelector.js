@@ -4,9 +4,11 @@ import homeownerIconBlue from "./home-work-blue.svg";
 import professionalIconDefault from "./business-center-default.svg";
 import professionalIconBlue from "./business-center-blue.svg";
 import arrowIcon from "./keyboard-arrow-right.png";
+// import handleNext from "./MultiStepForm.js";
+// import { formData, handleNext, setFormData } from "./MultiStepForm.js";
 
-function RoleSelector() {
-  const [selectorRole, setSelectorRole] = useState(null);
+function RoleSelector({ formData, handleNext, setFormData }) {
+  const selectorRole = formData.role;
 
   const roles = [
     {
@@ -41,7 +43,9 @@ function RoleSelector() {
             <div
               key={role.id}
               className={`role-card ${isSelected ? "selected" : ""}`}
-              onClick={() => setSelectorRole(role.id)}
+              onClick={() =>
+                setFormData((prev) => ({ ...prev, role: role.id }))
+              }
             >
               <img src={iconSrc} alt="" />
               <div>
@@ -52,15 +56,18 @@ function RoleSelector() {
           );
         })}
       </div>
-      <div className="button-container">
-        <button className="next-button" disabled={!selectorRole}>
+      {/* <div className="button-container">
+        <button
+          className="next-button"
+          disabled={!formData.role}
+          onClick={handleNext}
+        >
           Next
           <img src={arrowIcon} alt="" className="arrow" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
 
 export default RoleSelector;
-
