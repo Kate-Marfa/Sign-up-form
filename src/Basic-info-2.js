@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-// import { formData, handleChange, handleBack } from "./MultiStepForm.js";
+import vector from "./Vector.svg";
+import rectangle from "./Rectangle.png";
 
-function BasicInfo2({ formData, handleChange, handleBack }) {
+function BasicInfo2({ formData, handleChange }) {
   return (
     <div
       className="BasicInfo2"
@@ -10,6 +10,14 @@ function BasicInfo2({ formData, handleChange, handleBack }) {
       }}
     >
       <h2>Basic information about you</h2>
+      <div className="stage-of-form-container">
+        <p className="circle-no-color">
+          <img src={vector} alt="" width="19px" height='14px' id="vector"/>
+        </p>
+        <img src={rectangle} alt="" width="90px" />
+
+        <p className="circle-blue">2</p>
+      </div>
       <h3 className="h3-basicInfo2">Categories you work with</h3>
       <div className="categories-list">
         {["Economy", "Business", "Trading", "Communications"].map((cat) => (
@@ -49,12 +57,6 @@ function BasicInfo2({ formData, handleChange, handleBack }) {
           one upper case letter.
         </p>
       </div>
-      {/* <div className="buttons-previous-submit">
-        <button type="button" onClick={handleBack}>
-          Previous
-        </button>
-        <button type="submit">Submit</button>
-      </div> */}
     </div>
   );
 }

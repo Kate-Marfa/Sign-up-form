@@ -1,11 +1,7 @@
-import React, { useState } from "react";
 import homeownerIconDefault from "./home-work-default.svg";
 import homeownerIconBlue from "./home-work-blue.svg";
 import professionalIconDefault from "./business-center-default.svg";
 import professionalIconBlue from "./business-center-blue.svg";
-import arrowIcon from "./keyboard-arrow-right.png";
-// import handleNext from "./MultiStepForm.js";
-// import { formData, handleNext, setFormData } from "./MultiStepForm.js";
 
 function RoleSelector({ formData, handleNext, setFormData }) {
   const selectorRole = formData.role;
@@ -56,16 +52,6 @@ function RoleSelector({ formData, handleNext, setFormData }) {
           );
         })}
       </div>
-      {/* <div className="button-container">
-        <button
-          className="next-button"
-          disabled={!formData.role}
-          onClick={handleNext}
-        >
-          Next
-          <img src={arrowIcon} alt="" className="arrow" />
-        </button>
-      </div> */}
     </div>
   );
 }
